@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="TomatoeSimulation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TomatoeSimulation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20" />
+        </Style>
+        <Style TargetType="TextBlock" >
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Margin" Value="20" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <TextBlock Text="Current Step: " />
+            <TextBlock Name="currentStep" Text="0" />
+        </StackPanel>
+        <Canvas Grid.Row="1" Grid.Column="0" x:Name="tomatoeCanvas">
+            
+        </Canvas>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="reset" Content="Reset" Click="reset_Click"/>
+            <Button Name="step" Content="Step" Click="step_Click"/>
+            <Button Name="run" Content="Run" Click="run_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
